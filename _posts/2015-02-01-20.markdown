@@ -3,6 +3,7 @@ layout: post
 title:  "Configure CoffeeBot’s Web Server"
 date:   2015-02-01 13:46:20
 answerrostag: "web_server"
+track: [main]
 ---
 
 {% include critical_pre.html title="Important" %}
