@@ -3,6 +3,7 @@ layout: post
 title:  "We Want You to Learn Turtlebot in Simulation!"
 date:   2015-02-03 10:00:01
 answerrostag: "simulation_introduction"
+track: [simulation]
 ---
 
 A robotics simulator is used to create embedded applications for a robot without depending physically on the actual machine. The good part is that most applications used in simulation can be transferred to physical robots without major changes.
