@@ -26,6 +26,18 @@ Description: Ubuntu 14.04.* LTS
 
 {% include image.html img="/assets/sim_lsb_release.png" title="Results of “lsb_release -a” in Terminal" %}
 
+You have to set up the ROS environment variables before executing any ROS command. You have to run in every new terminal:
+{% highlight sh %}
+source /opt/ros/indigo/setup.bash
+{% endhighlight %}
+
+But, you can pre-configure your terminal with ROS environment variables and don’t think about it:
+{% highlight sh %}
+echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+{% endhighlight %}
+
+***NOTE:*** *We use the pre-configured terminal in all lessons, so don’t forget to write the proper command if your prefer the first case.*
+
 You can check which distribution of ROS you have by running:
 {% highlight sh %}
 roscore
