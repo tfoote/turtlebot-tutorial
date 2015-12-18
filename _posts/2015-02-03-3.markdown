@@ -30,9 +30,9 @@ You would see an environment, called a Gazebo world, with TurtleBot and some oth
 
 You can watch how it works in this video:
 
-{% include youtube.html youtubeid="CA2abSleWCc" youtubetitle="First Gazebo Launching"%}
+{% include youtube.html youtubeid="RdkgYYupGbM" youtubetitle="First Gazebo Launching"%}
 
-***NOTE:*** *Closing Gazebo from the Graphical User Interface (GUI) will not kill the additional processes spawned with roslaunch. If you need to finish work with Gazebo, press CTRL + C in the same terminal window.*
+***NOTE:*** *Closing Gazebo from the Graphical User Interface (GUI) will not kill the additional processes spawned with roslaunch. If you need to finish work with Gazebo, press Ctrl+C in the same terminal window.*
 
 ## Running Rviz
 
@@ -54,15 +54,18 @@ Follow the steps below to see what the robot sees:
 1. Rotate the camera until you can the TurtleBot from behind.
 2. Enable `DepthCloud` option from left-bar and you will see TurtleBot’s depth vision.
 3. Enable `Image` option from left-bar. Warning will appear.
-   ***NOTE:*** *Don't worry about this warning. We will install appropriate library next lesson. If there’s no warning just go to the next step.*
-   {% include image.html img="/assets/sim_rviz_no_image.png" title="No image" %}
-   4\. You need to change `Image->Image Topic` option (choose from drop-down list). Image will appear.
+
+***NOTE:*** *Don't worry about this warning. We will install appropriate library in the next lesson. If there’s no warning just go to the next step.*
+
+{% include image.html img="/assets/sim_rviz_no_image.png" title="No image" %}
+
+4\. You need to change `Image->Image Topic` option (choose from drop-down list). Image will appear.
 
 {% include image.html img="/assets/sim_rviz_depth_vision.png" title="Depth Vision" %}
 
 You can watch these steps in this video:
 
-{% include youtube.html youtubeid="WJpoPUfCTCE" youtubetitle="First Rviz Launching"%}
+{% include youtube.html youtubeid="8Qtp8Snnyo4" youtubetitle="First Rviz Launching"%}
 
 ***NOTE:*** *To save the configuration as the default, click `File->Save Config`. When you run rviz next time, it will load this configuration.*
 
