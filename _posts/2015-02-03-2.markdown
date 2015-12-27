@@ -5,13 +5,13 @@ date:   2015-02-03 10:00:02
 answerrostag: "simulation_installation"
 track: [simulation]
 ---
-***NOTE:*** *Some parts of this article duplicate information from [TurtleBot Simulation](http://learn.turtlebot.com/2015/02/01/28/) post. We will merge them later.*
+***NOTE:*** *Some parts of this article duplicate information from [TurtleBot Simulation]({{ site.url }}{% post_url 2015-02-01-28 %}) post. We will merge them later.*
 
-This tutorial assumes you are running Ubuntu 14.04. You can run Ubuntu natively on your own machine or in virtual machine. If you want to install Ubuntu on your machine, follow [this tutorial](http://learn.turtlebot.com/2015/02/01/4/).
+This tutorial assumes you are running Ubuntu 14.04. You can run Ubuntu natively on your own machine or in virtual machine. If you want to install Ubuntu on your machine, follow [this tutorial]({{ site.url }}{% post_url 2015-02-01-4 %}).
 
-To create a TurtleBot simulation you will need to install ROS Indigo and TurtleBot packages following [this tutorial](http://learn.turtlebot.com/2015/02/01/5/).
+To create a TurtleBot simulation you will need to install ROS Indigo and TurtleBot packages following [this tutorial]({{ site.url }}{% post_url 2015-02-01-5 %}).
 
-***NOTE:*** *You should use the LTS versions of these software as we wrote [before](http://learn.turtlebot.com/2015/02/01/4/). Both Ubuntu 14.04 and ROS Indigo are LTS.*
+***NOTE:*** *You should use the LTS versions of these software as we wrote [before]({{ site.url }}{% post_url 2015-02-01-4 %}). Both Ubuntu 14.04 and ROS Indigo are LTS.*
 
 You can check which version of Linux you have by running:
 
