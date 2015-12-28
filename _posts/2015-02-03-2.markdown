@@ -36,6 +36,10 @@ But, you can pre-configure your terminal with ROS environment variables and donâ
 echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
 {% endhighlight %}
 
+***NOTE:*** *If you want to edit or remove this configuration from your terminal's environment you will need to edit `~/.bashrc` and make the updates there.*
+
+Adding settings to the `~/.bashrc` will affect only new terminals. So you will need to reopen the terminals.
+
 ***NOTE:*** *We use the pre-configured terminal in all lessons, so donâ€™t forget to write the proper command if your prefer the first case.*
 
 You can check which distribution of ROS you have by running:
