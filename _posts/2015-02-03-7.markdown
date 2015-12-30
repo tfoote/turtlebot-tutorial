@@ -64,7 +64,7 @@ emacs -nw goincircles.py
 
 4\. Modify `linear.x` from 0.2 to 0 and `angular.z` from 0 to 0.5.
 
-***NOTE:*** *TurtleBot uses only `linear.x` and `angular.z` values because it works in a planar (2D) world.*
+***NOTE:*** *TurtleBot uses only `linear.x` and `angular.z` values because it works in a planar (2D) world and it has a differential drive system which cannot move laterally.*
 
 5\. Press `Ctrl+X`, then `Ctrl+S` to save the changes. After saving is finished, you will see a message like this:
 `Wrote /home/<user_name>/helloworld/turtlebot/goincircles.py`.
@@ -101,4 +101,4 @@ You can watch these steps in this video:
 
 Open files `goforward.py` and `draw_a_square.py` and try to understand the meaning of the commands reading the comments.
 
-You can learn more about Python in this [book](http://shop.oreilly.com/product/0636920028154.do)
+You can learn more about Python in this [book](http://shop.oreilly.com/product/0636920028154.do) or find basic online tutorial.
