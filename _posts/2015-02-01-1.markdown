@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "We Want You to Learn Turtlebot (and Robotics)!"
+title:  "We Want You to Learn TurtleBot (and Robotics)!"
 date:   2015-02-01 13:46:06
 answerrostag: "introduction"
 track: [main]
@@ -10,7 +10,7 @@ Practical and accessible robotics is upon us, ready to move from government and 
 
 Through software packages like the [Robot Operating System (ROS)](http://www.ros.org/), the intense research and expertise of engineers, computer scientists and more get distilled into ready-to-use development environments and function calls. Year by year, the barriers to entry come down and as web, mobile and maker developers transition into the field, the walls come down even faster.
 
-**The goal of this article series is to get web, mobile, and maker developers programming with ROS via the Turtlebot development platform.** We hope you will see the amazing possibilities and opportunities, dive in and never look back.
+**The goal of this article series is to get web, mobile, and maker developers programming with ROS via the TurtleBot development platform.** We hope you will see the amazing possibilities and opportunities, dive in and never look back.
 
 ## What is TurtleBot and What Does it Do?
 {% include image_onrightoftext.html img="/assets/turtlebot_2_lg.png" width="225" %}

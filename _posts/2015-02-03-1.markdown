@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "We Want You to Learn Turtlebot in Simulation!"
+title:  "We Want You to Learn TurtleBot in Simulation!"
 date:   2015-02-03 10:00:01
 answerrostag: "simulation_introduction"
 track: [simulation]
@@ -28,6 +28,6 @@ If you have a real robot you can save your time and money using simulation:
 
 Unfortunately, despite all advantages even the best software cannot  simulate the real world in his perfect.
 
-## Start Using Turtlebot in Gazebo Simulator!
+## Start Using TurtleBot in Gazebo Simulator!
 
 We use [Gazebo](http://gazebosim.org/) simulation platform in this guide. Gazebo supports ROS and maintained by [Open Source Robotics Foundation](http://www.osrfoundation.org/). Gazebo is an open source software platform for which anyone can develop a plug-in with model components. Gazebo can simulate complex systems. For instance, several robots with objects in their environments. It is used especially in developing robots used in interaction, to lift or grab objects, to push, or for any  other activity which requires recognition and localization in space.

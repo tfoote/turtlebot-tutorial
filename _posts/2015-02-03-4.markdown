@@ -17,7 +17,7 @@ First of all, make sure you have the openni packages installed:
 sudo apt-get install ros-indigo-openni-*
 {% endhighlight %}
 
-You can check the active 3D sensor of Turtlebot by running:
+You can check the active 3D sensor of TurtleBot by running:
 {% highlight sh %}
 echo $TURTLEBOT_3D_SENSOR
 {% endhighlight %}
