@@ -6,8 +6,6 @@ answerrostag: "simulation_autonomous"
 track: [simulation]
 ---
 
-***NOTE:*** *Some parts of this article duplicate information from [TurtleBot Simulation]({{ site.url }}{% post_url 2015-02-01-28 %}) post. We will merge them later.*
-
 This tutorial shows how to use the TurtleBot with a known map. In this tutorial we will run playground world with the default map, but also there are instructions which will help you to run your own world.
 
 1\. Launch gazebo.
