@@ -10,7 +10,7 @@ In addition to its cliff sensors and bumpers, Kinect is one of the ways TurtleBo
 
 ## Test Driver and USB Connection (TurtleBot Only)
 
-Before doing anything, check the default 3D sensor of Turtlebot by printing an
+Before doing anything, check the default 3D sensor of TurtleBot by printing an
 environment variable and confirm the output:
 
 {% highlight sh %}

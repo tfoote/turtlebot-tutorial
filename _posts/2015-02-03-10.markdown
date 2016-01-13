@@ -27,17 +27,17 @@ roslaunch turtlebot_gazebo amcl_demo.launch
 roslaunch turtlebot_rviz_launchers view_navigation.launch
 {% endhighlight %}
 
-4\. Change the Turtlebot orientation.
+4\. Change the TurtleBot orientation.
 
-[Send a navigation goal]({{ site.url }}{% post_url 2015-02-03-9 %}) to change Turtlebot orientation. It has to be facing the long object.
+[Send a navigation goal]({{ site.url }}{% post_url 2015-02-03-9 %}) to change TurtleBot orientation. It has to be facing the long object.
 
-5\. Change the Turtlebot position.
+5\. Change the TurtleBot position.
 
-Send a navigation goal to stand Turtlebot in front of the object facing it. For example, like this:
+Send a navigation goal to stand TurtleBot in front of the object facing it. For example, like this:
 
 {% include image.html img="/assets/sim_send_goal.png" title="Send a Navigation Goal" %}
 
-{% include image.html img="/assets/sim_pose_before_motion.png" title="Position of Turtlebot before Launching the Script" %}
+{% include image.html img="/assets/sim_pose_before_motion.png" title="Position of TurtleBot before Launching the Script" %}
 
 ## Launch Script
 
@@ -48,7 +48,7 @@ python ~/helloworld/turtlebot/goforward_and_avoid_obstacle.py
 
 2\. See the results in rviz.
 
-Turtlebot will find a path and stop on another side of object.
+TurtleBot will find a path and stop on another side of object.
 
 3\. Interrupt the processes. Close the terminals.
 

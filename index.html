@@ -21,6 +21,17 @@ answerrostag: "index"
     {% endfor %}
   </ol>
 
+  <h2>CoffeeBot Challenge</h2>
+  <ol>
+    {% for post in site.posts reversed %}
+      {% if post.track contains "coffeebot" %}
+        <li>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ol>
+
   <h2>Learning with the TurtleBot in Simulation</h2>
   <ol>
     {% for post in site.posts reversed %}

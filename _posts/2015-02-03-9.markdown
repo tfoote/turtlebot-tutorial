@@ -6,9 +6,7 @@ answerrostag: "simulation_autonomous"
 track: [simulation]
 ---
 
-***NOTE:*** *Some parts of this article duplicate information from [TurtleBot Simulation]({{ site.url }}{% post_url 2015-02-01-28 %}) post. We will merge them later.*
-
-This tutorial shows how to use the Turtlebot with a known map. In this tutorial we will run playground world with the default map, but also there are instructions which will help you to run your own world.
+This tutorial shows how to use the TurtleBot with a known map. In this tutorial we will run playground world with the default map, but also there are instructions which will help you to run your own world.
 
 1\. Launch gazebo.
 {% highlight sh %}
@@ -37,15 +35,15 @@ roslaunch turtlebot_rviz_launchers view_navigation.launch
 
 You can see this picture.
 {% include image.html img="/assets/sim_default_map.png" title="Default Map of the Playground World" %}
-Location of the Turtlebot on the map is already known. You will see a collection of arrows which show the position of the Turtlebot.
+Location of the TurtleBot on the map is already known. You will see a collection of arrows which show the position of the Turtlebot.
 
 4\. Send a navigation goal. Click the `2D Nav Goal` button.
 
-5\. Click on the map where you want the Turtlebot to drive and drag in the direction the Turtlebot should be pointing at the end.
+5\. Click on the map where you want the TurtleBot to drive and drag in the direction the Turtlebot should be pointing at the end.
 
 ***NOTE:*** *If the path or goal is blocked it can fail.*
 
-***NOTE:*** *If you want to stop the Turtlebot before it reaches it's goal, send it a goal at it's current location.*
+***NOTE:*** *If you want to stop the TurtleBot before it reaches it's goal, send it a goal at it's current location.*
 
 6\. Interrupt processes and close the terminals.
 

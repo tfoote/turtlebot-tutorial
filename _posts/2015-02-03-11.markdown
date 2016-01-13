@@ -41,7 +41,7 @@ We are interested in four numbers in quaternion (current rotation). We will send
 
 5\. Choose a point.
 
-Select `Publish point` and choose a point on map where you want Turtlebot to go (don’t click). You should note two numbers you see on the bottom left corner of rviz window. Look at the picture:
+Select `Publish point` and choose a point on map where you want TurtleBot to go (don’t click). You should note two numbers you see on the bottom left corner of rviz window. Look at the picture:
 
 {% include image.html img="/assets/sim_publish_point.png" title="Choose a Point" %}
 
@@ -89,7 +89,7 @@ python go_to_specific_point_on_map.py
 
 7\. See the results in rviz.
 
-Turtlebot will go to the specific point.
+TurtleBot will go to the specific point.
 
 8\. Interrupt the processes. Close the terminals.
 

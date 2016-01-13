@@ -6,8 +6,6 @@ answerrostag: "simulation_teleoperation"
 track: [simulation]
 ---
 
-***NOTE:*** *Some parts of this article duplicate information from [TurtleBot Simulation]({{ site.url }}{% post_url 2015-02-01-28 %}) post. We will merge them later.*
-
 Teleoperation allows you to control TurtleBot manually. There are different ways: keyboard, joystick,  QT teleop, interactive markers. Our tutorial will cover keyboard and interactive markers method.
 
 In this lesson we will show the tricks in terminal:
@@ -50,7 +48,7 @@ roslaunch turtlebot_interactive_markers interactive_markers.launch
 Follow the steps below to see the robot’s movements:
 
 1. Enable `Interactive Markers` option from left-bar.
-2. Select the `Interact` tool in the tool panel on the top of the screen. You will see blue ring and red arrows. 
+2. Select the `Interact` tool in the tool panel on the top of the screen. You will see blue ring and red arrows.
 3. Drag the red arrows to drive the TurtleBot forward and backward.
 4. Drag the blue ring to rotate the TurtleBot.
 5. You can drag the blue ring to rotate and drive simultaneously.

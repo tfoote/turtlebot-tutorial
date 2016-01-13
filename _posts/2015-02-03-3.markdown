@@ -6,8 +6,6 @@ answerrostag: "simulation_testing"
 track: [simulation]
 ---
 
-***NOTE:*** *Some parts of this article duplicate information from [TurtleBot Simulation]({{ site.url }}{% post_url 2015-02-01-28 %}) post. We will merge them later.*
-
 We assume that you have already done the [installation step]({{ site.url }}{% post_url 2015-02-03-2 %}).
 
 ## Running Gazebo with a TurtleBot
