@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Creating a map"
+title:  "Creating a Map"
 date:   2015-02-03 10:00:08
 answerrostag: "simulation_creat_map"
 track: [simulation]
@@ -10,7 +10,7 @@ track: [simulation]
 
 This tutorial shows how to build a map which let the robot remember the environment. Turtlebot can autonomously navigate around using the map.
 
-## Creating a map
+## Creating a Map
 
 1\. Create a folder for maps.
 {% highlight sh %}
