@@ -22,27 +22,25 @@ please do it firstly. We assume that your files are situated here `~/helloworld/
 roslaunch turtlebot_gazebo turtlebot_world.launch
 {% endhighlight %}
 
-1\. Open a new terminal and change directory.
+2\. Open a new terminal and change directory.
 {% highlight sh %}
 cd ~/helloworld/turtlebot
 {% endhighlight %}
 
-2\. Launch script.
+3\. Launch script.
 {% highlight sh %}
 python take_photo.py
 {% endhighlight %}
 
-3\. See the results. Open the image file.
+4\. See the results. Open the image file.
 {% highlight sh %}
 ristretto photo.jpg
 {% endhighlight %}
 
 ***NOTE:*** *You can use image viewer which you prefer.*
 
-4\. Interrupt gazebo. Close the terminals.
+5\. Interrupt gazebo. Close the terminals.
 
 You can watch these steps in the video:
 
-[comment]: <> (TODO: replace link)
-
-{% include youtube.html youtubeid="n_qHlaCxZZU" youtubetitle="Taking a Photo Using Code"%}
+{% include youtube.html youtubeid="YoPz2lHzfDk" youtubetitle="Taking a Photo Using Code"%}
