@@ -2,8 +2,8 @@
 layout: post
 title:  "Taking a Photo Using Code"
 date:   2015-02-04 10:00:03
-answerrostag: "simulation_challenge"
-track: [simulation]
+answerrostag: "challenge_photo_using_code"
+track: [challenge]
 ---
 
 [comment]: <> (TODO: replace answerrostag and track)

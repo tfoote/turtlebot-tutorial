@@ -2,8 +2,8 @@
 layout: post
 title:  "Recording a Video"
 date:   2015-02-04 10:00:04
-answerrostag: "simulation_challenge"
-track: [simulation]
+answerrostag: "challenge_video"
+track: [challenge]
 ---
 
 [comment]: <> (TODO: replace answerrostag and track)

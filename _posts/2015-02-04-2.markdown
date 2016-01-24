@@ -2,8 +2,8 @@
 layout: post
 title:  "Taking a Photo"
 date:   2015-02-04 10:00:02
-answerrostag: "simulation_challenge"
-track: [simulation]
+answerrostag: "challenge_taking_photo"
+track: [challenge]
 ---
 
 [comment]: <> (TODO: replace answerrostag and track)
