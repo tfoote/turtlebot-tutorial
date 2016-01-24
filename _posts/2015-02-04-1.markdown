@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Introduction"
+date:   2015-02-04 10:00:01
+answerrostag: "challenge_introduction"
+track: [challenge]
+---
+
+[comment]: <> (TODO: write some words about next lessons)
