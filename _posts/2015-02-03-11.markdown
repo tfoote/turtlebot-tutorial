@@ -8,7 +8,7 @@ track: [simulation]
 
 In this lesson we will learn how to send robot a command: "go to a specific position at map".
 
-We will work with the files from the [github repository](https://github.com/markwsilliman/turtlebot/) again. If you haven’t done [this lesson]({{ site.url }}{% post_url 2015-02-03-7 %}) please do it firstly. We assume that your files are situated here `~/helloworld/turtlebot`.
+{% include using_github_rep.md %}
 
 ## Launch Gazebo and Rviz
 
