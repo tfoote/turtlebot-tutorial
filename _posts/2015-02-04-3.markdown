@@ -11,9 +11,7 @@ track: [challenge]
 We have learnt how to take a photo manually, but it is not very convenient.
 In this lesson we will learn how to take a photo using a script.
 
-We will work with the files from the [github repository](https://github.com/markwsilliman/turtlebot/)
-again. If you haven’t done [this lesson]({{ site.url }}{% post_url 2015-02-03-7 %})
-please do it firstly. We assume that your files are situated here `~/helloworld/turtlebot`.
+{% include using_github_rep.md %}
 
 ## Launch Script
 

@@ -8,7 +8,7 @@ track: [simulation]
 
 We have learned how to launch and modify existing python script in [this lesson]({{ site.url }}{% post_url 2015-02-03-7 %}). We have learned how to send robot a command saying: "go forward until we send you a stop signal". In this lesson we will learn more complicated command: “we want to end up at the location three meters forward regardless of what path takes us there”.
 
-We will work with the files from the [github repository](https://github.com/markwsilliman/turtlebot/) again. If you haven’t done [this lesson]({{ site.url }}{% post_url 2015-02-03-7 %}) please do it firstly. We assume that your files are situated here `~/helloworld/turtlebot`.
+{% include using_github_rep.md %}
 
 ## Launch Gazebo and Rviz
 
