@@ -63,16 +63,16 @@ emacs -nw go_to_specific_point_on_map.py
 
 ***NOTE:*** *You can use editor you prefer.*
 
-3\. Modify line \#45.
+3\. Modify line \#83.
 
 Old values:
 {% highlight sh %}
-goal.target_pose.pose = Pose((Point(2.18, -1.7, 0.000), Quaternion(0.000, 0.000, 0.892, -1.500))
+position = {'x': 1.22, 'y' : 2.56}
 {% endhighlight %}
 
 New values:
 {% highlight sh %}
-goal.target_pose.pose = Pose((Point(3.52, -1.7, 0.000), Quaternion(0.000, 0.000, 0.000, 1.000))
+position = {'x': 3.52, 'y' : -1.7}
 {% endhighlight %}
 
 4\. Press `Ctrl+X`, then `Ctrl+S` to save the changes. After saving is finished, you will see a message like this:
@@ -94,4 +94,10 @@ TurtleBot will go to the specific point.
 8\. Interrupt the processes. Close the terminals.
 
 You can watch these steps in the video:
+
+***NOTE:*** *File `go_to_specific_point_on_map.py` is outdated in this video.
+We will update this video later.*
+
+[comment]: <> (TODO: update video)
+
 {% include youtube.html youtubeid="n_qHlaCxZZU" youtubetitle="Going to a Specific Location on Your Map Using Code"%}
