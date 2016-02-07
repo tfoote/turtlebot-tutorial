@@ -60,7 +60,7 @@ You can watch these steps in the video:
 
 We use the code from previous lessons `go_to_specific_point_on_map.py` and
 `take_photo.py`. `Follow_the_route.py` reads input data from `route.yaml` file.
-The yaml file has three lines. It means that there are three goals. Look on the
+The YAML file has three lines. It means that there are three goals. Look on the
 first line:
 
 {% highlight sh %}
@@ -71,10 +71,10 @@ The `dumpster.png` is the image title for picture. The position and quaternion
 set the goal: the place where TurtleBot takes a photo. We discussed how to
 define position and quaternion values in
 ["Going to a Specific Location on Your Map Using Code"]({{ site.url }}{% post_url 2015-02-03-11 %})
-lesson. You can modify this yaml file.
+lesson. You can modify this YAML file.
 
 ***NOTE:*** *You should use one space between `-` and `{` in the beginning of
-  the line in yaml file.*
+  the line in YAML file. For more information read [official YAML documentation](http://www.yaml.org/spec/1.2/spec.html).*
 
 If TurtleBot cannot reach the goal it does not take a photo and goes to the
 next goal in the list. If you want to stop TurtleBot you can press `Ctrl+C`.
