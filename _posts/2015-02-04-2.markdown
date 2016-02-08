@@ -72,7 +72,7 @@ rosrun image_view image_view image:=/camera/rgb/image_raw _filename_format:="tut
 
 *Correctly:*
 {% highlight sh %}
-_filename_format:="/home/nadya/turtlebot_photos/tutorial%02i.jpg"
+_filename_format:="/home/your_name/turtlebot_photos/tutorial%02i.jpg"
 {% endhighlight %}
 
 7\. Interrupt the process.
