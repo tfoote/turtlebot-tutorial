@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "TurtleBot Follower"
+date:   2015-02-04 10:00:07
+answerrostag: "challenge_follower"
+track: [challenge]
+---
+
+[comment]: <> (TODO: replace answerrostag and track)
+
+In this lesson we will launch TurtleBot follower demo. We will launch two
+TurtleBots in Gazebo Concert, then you will drive the first TurtleBot and the
+second will follow it.
+
+## Prerequisites
+
+1\. This lesson is a continuation of the previous lesson:
+["Multiple TurtleBots in Concert"]({{ site.url }}{% post_url 2015-02-04-6 %}).
+If you have not done instructions from `prerequisites` section, you should do
+them firstly.
+
+[comment]: <> (TODO: remove `make` instruction when launch file for simulation will be in deb package)
+
+2\. Make turtlebot_follower.
+{% highlight sh %}
+cd ~/helloworld/turtlebot/my_turtlebot_follower
+catkin_make
+{% endhighlight %}
+
+## Launch Script
+
+1\. Launch Gazebo Concert (steps 1-11 from the previous lesson).
+
+[comment]: <> (TODO: remove `change the path` instruction when launch file for simulation will be in deb package)
+
+2\. Open a new terminal and change the path to the turtlebot_follower package.
+{% highlight sh %}
+source /home/<your_name>/helloworld/turtlebot/my_turtlebot_follower/devel/setup.bash
+{% endhighlight %}
+
+3\. Launch turtlebot_follower demo.
+{% highlight sh %}
+roslaunch turtlebot_follower follower.launch simulation:=true __ns:=gamza2
+{% endhighlight %}
+
+***NOTE:*** *__ns is a substitute for ROS_NAMESPACE.*
+
+4\. Drive `gamza1` using joystick. You will see the reaction of `gamza2`.
+
+***NOTE:*** *If `gamza1` is very close to `gamza2`, then `gamza2` will go back.*
+
+5\. Interrupt the processes. Close the windows.
+
+You can watch these steps in the video:
+
+{% include youtube.html youtubeid="3rtyL6Nif90" youtubetitle="TurtleBot Follower"%}
