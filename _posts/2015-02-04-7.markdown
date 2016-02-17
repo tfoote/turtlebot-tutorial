@@ -29,28 +29,54 @@ catkin_make
 
 ## Launch Script
 
-1\. Launch Gazebo Concert (steps 1-11 from the previous lesson).
+TurtleBot named `gamza1` will be controlled using joystick, TurtleBot named
+`gamza2` will follow `gamza1` in this example.
+
+1\. Launch Gazebo Concert (steps 1-10 from the [previous lesson]({{ site.url }}{% post_url 2015-02-04-6 %})).
+
+{% include image.html img="/assets/sim_gazebo_concert.png" title="Gazebo Concert" %}
+
+2\. Select `gamza1` in the resource list and capture it.
+
+{% include image.html img="/assets/sim_concert_capture.png" title="Capture gamza1" %}
 
 [comment]: <> (TODO: remove `change the path` instruction when launch file for simulation will be in deb package)
 
-2\. Open a new terminal and change the path to the turtlebot_follower package.
+3\. Open a new terminal and change the path to the turtlebot_follower package.
 {% highlight sh %}
-source /home/<your_name>/helloworld/turtlebot/my_turtlebot_follower/devel/setup.bash
+cd ~/helloworld/turtlebot
+source my_turtlebot_follower/devel/setup.bash
 {% endhighlight %}
 
-3\. Launch turtlebot_follower demo.
+4\. Launch turtlebot_follower demo.
 {% highlight sh %}
 roslaunch turtlebot_follower follower.launch simulation:=true __ns:=gamza2
 {% endhighlight %}
 
-***NOTE:*** *__ns is a substitute for ROS_NAMESPACE.*
+***NOTE:*** *__ns is a substitute for ROS_NAMESPACE. You can find more
+information on [wiki ros](http://wiki.ros.org/Remapping%20Arguments).*
 
-4\. Drive `gamza1` using joystick. You will see the reaction of `gamza2`.
+5\. To initiate following, `gamza1` has to be in front of `gamza2`. Drive
+`gamza1` using joystick to place it in front of `gamza2`. After `gamza2`
+recognizes `gamza1`, `gamza2` tries to keep the center of the observed object
+directly in front of itself and a fixed distance away.
 
-***NOTE:*** *If `gamza1` is very close to `gamza2`, then `gamza2` will go back.*
+{% include image.html img="/assets/sim_turtlebot_follower.png" title="TurtleBot Follower" %}
 
-5\. Interrupt the processes. Close the windows.
+If `gamza1` is very close to `gamza2`, then `gamza2` will go backward away. If
+distance between them is increasing then `gamza2` will go forward after `gamza1`
+to reduce the distance.
+
+You should move `gamza1` slowly. If you move `gamza1` too quickly, then `gamza2`
+will lose it and stop.
+
+***NOTE:*** *Other objects could confuse the follower. You should avoid them.*
+
+6\. Interrupt the processes. Close the windows.
 
 You can watch these steps in the video:
 
-{% include youtube.html youtubeid="3rtyL6Nif90" youtubetitle="TurtleBot Follower"%}
+{% include youtube.html youtubeid="gxEsWbVGHSs" youtubetitle="TurtleBot Follower"%}
+
+You can find more information about turtlebot_follower package on
+[wiki ros](http://wiki.ros.org/turtlebot_follower).
