@@ -93,6 +93,8 @@ You will see two TurtleBots!
 
 12\. You can drive robot using joystick.
 
+{% include image.html img="/assets/sim_concert_joystick.png" title="Joystick Operations" %}
+
 13\. To finish select `Release`.
 
 14\. Interrupt the processes. Close the windows.
