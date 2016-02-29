@@ -9,14 +9,14 @@ track: [simulation]
 We have learned how to launch and modify existing python script in
 [this lesson]({{ site.url }}{% post_url 2015-02-03-7 %}). We have learned how
 to send robot a command saying: "go forward until we send you a stop signal".
-In this lesson we will learn more complicated command: “we want to end up at
-the location three meters forward regardless of what path takes us there”.
+In this lesson we will learn more complicated command: "we want to end up at
+the location three meters forward regardless of what path takes us there".
 
 {% include using_github_rep.md %}
 
-## Launch Gazebo and Rviz
+## Launching Gazebo and Rviz
 
-1\. Launch gazebo.
+1\. Launch Gazebo.
 {% highlight sh %}
 roslaunch turtlebot_gazebo turtlebot_world.launch
 {% endhighlight %}
@@ -26,7 +26,7 @@ roslaunch turtlebot_gazebo turtlebot_world.launch
 roslaunch turtlebot_gazebo amcl_demo.launch
 {% endhighlight %}
 
-3\. Launch rviz.
+3\. Launch Rviz.
 {% highlight sh %}
 roslaunch turtlebot_rviz_launchers view_navigation.launch
 {% endhighlight %}
@@ -45,14 +45,14 @@ For example, like this:
 
 {% include image.html img="/assets/sim_pose_before_motion.png" title="Position of TurtleBot before Launching the Script" %}
 
-## Launch Script
+## Launching Script
 
 1\. Launch script.
 {% highlight sh %}
 python ~/helloworld/turtlebot/goforward_and_avoid_obstacle.py
 {% endhighlight %}
 
-2\. See the results in rviz.
+2\. See the results in Rviz.
 
 TurtleBot will find a path and stop on another side of object.
 
