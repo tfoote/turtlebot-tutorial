@@ -8,14 +8,14 @@ track: [simulation]
 
 We can write a program and robot will do these instructions. In this lesson you
 will learn how to launch, create and modify a script. We will launch python
-script but it doesn’t matter if you know this language or not.
+script but it does not matter if you know this language or not.
 
 Open a new terminal. Launch the empty world:
 {% highlight sh %}
 roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=/opt/ros/indigo/share/turtlebot_gazebo/worlds/empty.world
 {% endhighlight %}
 
-## Launch a Script
+## Launching a Script
 
 You should do these instructions step by step:
 
@@ -34,6 +34,8 @@ cd ~/helloworld/
 git clone https://github.com/markwsilliman/turtlebot/
 {% endhighlight %}
 
+***NOTE:*** *You need to have [Github account](https://github.com/) to do this step.*
+
 4\. Change directory.
 {% highlight sh %}
 cd turtlebot
@@ -44,11 +46,11 @@ cd turtlebot
 python goforward.py
 {% endhighlight %}
 
-6\. The TurtleBot is going forward in the gazebo.
+6\. The TurtleBot is going forward in Gazebo.
 
 7\. Press `Ctrl+C` in the terminal to stop TurtleBot.
 
-## Create and Modify a Script
+## Creating and Modifying a Script
 
 Now you will modify the existing script. TurtleBot will revolve on its axis.
 
@@ -90,7 +92,7 @@ python goincircles.py
 
 9\. Press `Ctrl+C` in the terminal to stop TurtleBot.
 
-## Launch another Script
+## Launching another Script
 
 1\. Change directory.
 {% highlight sh %}
