@@ -17,7 +17,7 @@ Simulation can be useful if you have not a real robot and even if you have.
 
 If you have not got a robot you can start the work without buying, waiting for
 the delivery, making the robot. It is free! You should install the special
-software and go throw this guide. You can start writing the working code and
+software and go throw this tutorial. You can start writing the working code and
 see the results in a short time!
 
 If you have a real robot you can save your time and money using simulation:
@@ -44,7 +44,7 @@ the real world in his perfect.
 
 ## Start Using TurtleBot in Gazebo Simulator!
 
-We use [Gazebo](http://gazebosim.org/) simulation platform in this guide. Gazebo
+We use [Gazebo](http://gazebosim.org/) simulation platform in this tutorial. Gazebo
 supports ROS and maintained by [Open Source Robotics Foundation](http://www.osrfoundation.org/).
 Gazebo is an open source software platform for which anyone can develop a
 plug-in with model components. Gazebo can simulate complex systems. For
