@@ -7,16 +7,16 @@ track: [simulation]
 ---
 
 Teleoperation allows you to control TurtleBot manually. There are different
-ways: keyboard, joystick,  QT teleop, interactive markers. Our tutorial will
+ways: keyboard, joystick, QT teleop, interactive markers. Our tutorial will
 cover keyboard and interactive markers method.
 
 In this lesson we will show the tricks in terminal:
 
 1. Using Up and Down Arrow keys you can switch between the last-used commands.
-2. Use Ctrl+R combination to invoke  `reverse-i-search`. Type letters, `gaz`
-for instance, and you'll get a match for the recent command in your history that
-has `gaz`. You can press Ctrl+R again to go to the previous command in this
-search. When you see the proper command press Enter to execute it or Right Arrow
+2. Use `Ctrl+R` combination to invoke `reverse-i-search`. Type letters, `gaz`
+for instance, and you will get a match for the recent command in your history which
+has `gaz`. You can press `Ctrl+R` again to go to the previous command in this
+search. When you see the proper command press `Enter` to execute it or Right Arrow
 to choose this command for editing.
 
 We show using these tricks in tutorial videos for this lesson with explanations.
@@ -24,13 +24,13 @@ Later we will assume that you understand how it works.
 
 ## Keyboard
 
-While Gazebo and rviz are running, open a new terminal and run:
+While Gazebo and Rviz are running, open a new terminal and run:
 {% highlight sh %}
 roslaunch turtlebot_teleop keyboard_teleop.launch
 {% endhighlight %}
 
 ***NOTE:*** *The terminal with teleop launching has to be active all the time
-otherwise you won’t be able to operate the TurtleBot.*
+otherwise you will not be able to operate the TurtleBot.*
 
 TurtleBot can move forward and backward, rotate. Also you can increase/decrease
 the speed. See the instructions in the terminal output:
@@ -43,13 +43,13 @@ You can watch how it works in this video:
 
 ## Interactive Markers
 
-You can control TurtleBot in rviz. Check that you have the interactive markers
+You can control TurtleBot in Rviz. Check that you have the interactive markers
 packages installed:
 {% highlight sh %}
 sudo apt-get install ros-indigo-turtlebot-interactive-markers
 {% endhighlight %}
 
-While Gazebo and rviz are running, open a new terminal and run:
+While Gazebo and Rviz are running, open a new terminal and run:
 {% highlight sh %}
 roslaunch turtlebot_interactive_markers interactive_markers.launch
 {% endhighlight %}
