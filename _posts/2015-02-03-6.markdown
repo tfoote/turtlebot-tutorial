@@ -6,11 +6,11 @@ answerrostag: "simulation_editing_world"
 track: [simulation]
 ---
 
-In previous articles we encountered with the simulated world. We understood how
+In previous lessons we encountered with the simulated world. We understood how
 to move in it, change the camera view. In this lesson we will learn how to choose
 a world for simulation, create a new world, edit the existing world.
 
-## Specify World for Simulation
+## Specifying World for Simulation
 
 We use following command to run the Gazebo world:
 {% highlight sh %}
@@ -47,10 +47,7 @@ The default world is in the environment variable `TURTLEBOT_GAZEBO_WORLD_FILE`.
 You can see it running this command:
 {% highlight sh %}
 echo $TURTLEBOT_GAZEBO_WORLD_FILE
-{% endhighlight %}
-
-You will see the output:
-{% highlight sh %}
+# Output:
 /opt/ros/indigo/share/turtlebot_gazebo/worlds/playground.world
 {% endhighlight %}
 
@@ -68,7 +65,7 @@ echo "export TURTLEBOT_GAZEBO_WORLD_FILE=<full path to the world file>" >> .bash
 
 It will work after relaunching the terminals.
 
-## Launch an Empty World
+## Launching an Empty World
 
 1\. Create a folder for new worlds:
 {% highlight sh %}
@@ -84,7 +81,7 @@ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=/opt/ros/indigo/sh
 
 {% include image.html img="/assets/sim_empty_world.png" title="Empty World" %}
 
-## Edit a World
+## Editing a World
 
 You can add simple shapes objects and objects from model database.
 
@@ -93,7 +90,7 @@ You can add simple shapes objects and objects from model database.
 {% include image.html img="/assets/sim_connect_to_database.png" title="Connecting to Model Database" %}
 
 ***NOTE:*** *You can see `Connecting to model database`. It might take a long
-time to connect to gazebo's model database.*
+time to connect to Gazebo's model database.*
 
 You will see this picture after connecting:
 
@@ -108,10 +105,10 @@ when you choose the proper position of the box.
 
 4\. Add a bookshelf.
 
-Select the Insert tab to access the model database. Select the bookshelf. Add
+Select the `Insert` tab to access the model database. Select the bookshelf. Add
 it to the render window.
 
-***NOTE:*** *It might take some time to download a model from gazebo's model
+***NOTE:*** *It might take some time to download a model from Gazebo's model
 database.*
 
 5\. Add a cafe table and a dumpster.
@@ -127,7 +124,7 @@ Delete the dumpster.
 
 {% include image.html img="/assets/sim_delete_model.png" title="Delete the Object" %}
 
-## Save a New World
+## Saving a New World
 
 Select the `File` menu and choose `Save World As`.
 
@@ -151,9 +148,8 @@ In the next lessons we will use this command:
 roslaunch turtlebot_gazebo turtlebot_world.launch
 {% endhighlight %}
 
-with the default world which is situated here:
-`/opt/ros/indigo/share/turtlebot_gazebo/worlds/playground.world`. Or we will
-specify the world file in the command:
+with the default world `/opt/ros/indigo/share/turtlebot_gazebo/worlds/playground.world`.
+Or we will specify the world file in the command:
 {% highlight sh %}
 roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=<full path to the world file>
 {% endhighlight %}
