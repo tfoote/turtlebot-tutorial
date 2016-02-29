@@ -6,7 +6,8 @@ answerrostag: "simulation_specific_location"
 track: [simulation]
 ---
 
-In this lesson we will learn how to send robot a command: "go to a specific position at map".
+In this lesson we will learn how to send robot a command: "go to a specific
+position at map".
 
 {% include using_github_rep.md %}
 
@@ -37,17 +38,22 @@ rosrun tf tf_echo /map /base_link
 You will see the following output in the terminal:
 {% include image.html img="/assets/sim_current_position.png" title="Current Position" %}
 
-We are interested in four numbers in quaternion (current rotation). We will send a goal to change position with approximately the same rotation. Note four numbers: [0, 0, 0, 1].
+We are interested in four numbers in quaternion (current rotation). We will
+send a goal to change position with approximately the same rotation. Note four
+numbers: [0, 0, 0, 1].
 
 5\. Choose a point.
 
-Select `Publish point` and choose a point on map where you want TurtleBot to go (don’t click). You should note two numbers you see on the bottom left corner of rviz window. Look at the picture:
+Select `Publish point` and choose a point on map where you want TurtleBot to go
+(don’t click). You should note two numbers you see on the bottom left corner of
+rviz window. Look at the picture:
 
 {% include image.html img="/assets/sim_publish_point.png" title="Choose a Point" %}
 
 There are two numbers: [3.52, -1.7].
 
-***NOTE:*** *The third number is altitude. It may show a number that isn’t perfectly 0, but regardless of what it says, use 0.*
+***NOTE:*** *The third number is altitude. It may show a number that isn’t
+perfectly 0, but regardless of what it says, use 0.*
 
 ## Launch Script
 
@@ -75,7 +81,8 @@ New values:
 position = {'x': 3.52, 'y' : -1.7}
 {% endhighlight %}
 
-4\. Press `Ctrl+X`, then `Ctrl+S` to save the changes. After saving is finished, you will see a message like this:
+4\. Press `Ctrl+X`, then `Ctrl+S` to save the changes. After saving is
+finished, you will see a message like this:
 {% highlight sh %}
 Wrote /home/<user_name>/helloworld/turtlebot/go_to_specific_point_on_map.py
 {% endhighlight %}
