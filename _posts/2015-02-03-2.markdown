@@ -6,9 +6,10 @@ answerrostag: "simulation_installation"
 track: [simulation]
 ---
 
-This tutorial assumes you are running Ubuntu 14.04. You can run Ubuntu natively
-on your own machine or in virtual machine. If you want to install Ubuntu on
-your machine, follow [this tutorial]({{ site.url }}{% post_url 2015-02-01-4 %}).
+This tutorial assumes you are running Ubuntu 14.04. If you want to install
+Ubuntu on your machine, follow [this tutorial]({{ site.url }}{% post_url 2015-02-01-4 %}).
+
+***NOTE:*** *If you use virtual machine it will cause problems.*
 
 To create a TurtleBot simulation you will need to install ROS Indigo and
 TurtleBot packages following [this tutorial]({{ site.url }}{% post_url 2015-02-01-5 %}).
@@ -27,7 +28,7 @@ You have the right version if you see:
 Description: Ubuntu 14.04.* LTS
 {% endhighlight %}
 
-{% include image.html img="/assets/sim_lsb_release.png" title="Results of “lsb_release -a” in Terminal" %}
+{% include image.html img="/assets/sim_lsb_release.png" title="Result of “lsb_release -a” in Terminal" %}
 
 You have to set up the ROS environment variables before executing any ROS
 command. You have to run in every new terminal:
@@ -36,7 +37,7 @@ source /opt/ros/indigo/setup.bash
 {% endhighlight %}
 
 But, you can pre-configure your terminal with ROS environment variables and
-don’t think about it:
+do not think about it:
 {% highlight sh %}
 echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
 {% endhighlight %}
@@ -47,8 +48,8 @@ environment you will need to edit `~/.bashrc` and make the updates there.*
 Adding settings to the `~/.bashrc` will affect only new terminals. So you will
 need to reopen the terminals.
 
-***NOTE:*** *We use the pre-configured terminal in all lessons, so don’t forget
-to write the proper command if your prefer the first case.*
+***NOTE:*** *We use the pre-configured terminal in all lessons, so do not forget
+to write the proper command if you prefer the first case.*
 
 You can check which distribution of ROS you have by running:
 {% highlight sh %}
@@ -60,7 +61,7 @@ You have the right distribution if you see:
  * /rosdistro: indigo
 {% endhighlight %}
 
-{% include image.html img="/assets/sim_roscore.png" title="Results of “roscore” in Terminal" %}
+{% include image.html img="/assets/sim_roscore.png" title="Result of “roscore” in Terminal" %}
 
 ROS is installed correctly if you see:
 {% highlight sh %}
