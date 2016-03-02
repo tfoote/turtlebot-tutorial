@@ -35,3 +35,5 @@ TURTLEBOT_3D_SENSOR=kinect
 ## Testing Kinect
 
 [comment]: <> (TODO: write this section)
+
+***NOTE:*** *This section is going to be completed later.*
