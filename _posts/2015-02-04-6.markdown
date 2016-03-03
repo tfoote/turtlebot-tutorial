@@ -16,54 +16,57 @@ simulation world. We will use robotics in concert packages (a.k.a. rocon).
 ## Prerequisites
 
 1\. Install packages.
-
-[comment]: <> (TODO: check that there are enough new packages)
-
 {% highlight sh %}
+sudo apt-get install ros-indigo-turtlebot-concert
 sudo apt-get install ros-indigo-gazebo-concert
 sudo apt-get install ros-indigo-rocon-remocon
+sudo apt-get install ros-indigo-concert-services
 {% endhighlight %}
 
-2\. Make gazebo_concert.
+2\. Make my_gazebo_concert.
 {% highlight sh %}
 cd ~/helloworld/turtlebot/my_gazebo_concert
 catkin_make
 {% endhighlight %}
 
-## Launch Script
+We will use my_gazebo_concert package to provide alternative parameters for
+launching gazebo_concert package. We have added the second TurtleBot in
+parameters file
+`/home/<your_name>/helloworld/turtlebot/my_gazebo_concert/src/solutions/gazebo.parameters`.
 
-1\. Check the path to the gazebo_concert.
-{% highlight sh %}
-rospack find gazebo_concert
-# Output: /opt/ros/indigo/share/gazebo_concert
-{% endhighlight %}
+## Launching Gazebo Concert
 
-2\. Change the path.
+1\. Change the path.
 {% highlight sh %}
 source /home/<your_name>/helloworld/turtlebot/my_gazebo_concert/devel/setup.bash
 {% endhighlight %}
 
 ***NOTE:*** *The command changes the path only in this terminal.*
 
-3\. Check the path to the gazebo_concert.
+2\. Launch gazebo_concert.
 {% highlight sh %}
-rospack find gazebo_concert
-# Output:/home/<your_name>/helloworld/turtlebot/my_gazebo_concert/src
+roslaunch gazebo_concert concert.launch gazebo_services:=my_gazebo_concert/gazebo.services
 {% endhighlight %}
 
-4\. Launch gazebo_concert.
-{% highlight sh %}
-roslaunch gazebo_concert concert.launch
-{% endhighlight %}
-
-5\. Start rocon_remocon.
+3\. Start rocon_remocon.
 {% highlight sh %}
 rocon_remocon
 {% endhighlight %}
 
 You will see this image:
 
-{% include image.html img="/assets/sim_remocon.png" title="Remocon" %}
+{% include image.html img="/assets/sim_remocon_empty_list.png" title="Remocon" %}
+
+4\. Press `Add`. Edit `MASTER_URI`.
+{% highlight sh %}
+MASTER_URI: http://localhost:11311
+{% endhighlight %}
+
+{% include image.html img="/assets/sim_remocon_add.png" title="Remocon Add Master" %}
+
+5\. Press `Add`. You will see ros master `Gazebo Concert`.
+
+{% include image.html img="/assets/sim_remocon.png" title="Remocon Master List" %}
 
 6\. Press `Refresh`.
 
@@ -101,7 +104,7 @@ You will see two TurtleBots!
 
 You can watch these steps in the video:
 
-{% include youtube.html youtubeid="aHQym_LSisA" youtubetitle="Multiple TurtleBots in Concert"%}
+{% include youtube.html youtubeid="XxkHsrcPl-E" youtubetitle="Multiple TurtleBots in Concert"%}
 
 You can add new robots in simulation by editing
 `/home/<your_name>/helloworld/turtlebot/my_gazebo_concert/src/solutions/gazebo.parameters`
