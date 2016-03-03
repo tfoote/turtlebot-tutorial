@@ -11,59 +11,115 @@ track: [challenge]
 In this lesson we will learn how to launch two TurtleBots simultaneously in
 simulation world. We will use robotics in concert packages (a.k.a. rocon).
 
-{% include using_github_rep.md %}
-
 ## Prerequisites
 
 1\. Install packages.
-
-[comment]: <> (TODO: check that there are enough new packages)
-
 {% highlight sh %}
+sudo apt-get install ros-indigo-turtlebot-concert
 sudo apt-get install ros-indigo-gazebo-concert
 sudo apt-get install ros-indigo-rocon-remocon
+sudo apt-get install ros-indigo-concert-services
 {% endhighlight %}
 
-2\. Make gazebo_concert.
+2\. In the tutorial we will use some modifications of standard packages. Let's
+create a workspace.
 {% highlight sh %}
-cd ~/helloworld/turtlebot/my_gazebo_concert
+mkdir -p ~/my_ws/src/
+{% endhighlight %}
+
+All packages will be situated in `src` folder. It is highly recommended to
+review [Creating a ROS Package](http://wiki.ros.org/ROS/Tutorials/CreatingPackage)
+and [Building a ROS Package](http://wiki.ros.org/ROS/Tutorials/BuildingPackages)
+before move on.
+
+3\. We will use a `gazebo_concert` package to provide alternative parameters.
+
+3.1 Change directory.
+{% highlight sh %}
+cd ~/my_ws/src
+{% endhighlight %}
+
+3.2 Clone the `rocon_tutorial` repository.
+{% highlight sh %}
+git clone https://github.com/robotics-in-concert/rocon_tutorials.git
+{% endhighlight %}
+
+3.4 Change git branch.
+{% highlight sh %}
+git checkout indigo
+{% endhighlight %}
+
+3.5 Change directory.
+{% highlight sh %}
+cd rocon_tutorials/concert_tutorials/gazebo_concert/solutions/
+{% endhighlight %}
+
+3.6 Edit `gazebo.parameters` file. We want to launch two TurtleBot simultaneously.
+It is a new `gazebo.parameters` file.
+{% highlight sh %}
+robots:
+  - name: gamza1
+    type: turtlebot
+    robot_rapp_whitelist: [rocon_apps, turtlebot_rapps]
+    location: [0.0, 0.2, 0.0]
+  - name: gamza2
+    type: turtlebot
+    robot_rapp_whitelist: [rocon_apps, turtlebot_rapps]
+    location: [0.0, 0.0, 0.0]
+
+world_file: concert_service_gazebo/playground.world
+{% endhighlight %}
+
+4\. Build package.
+
+4.1  Remember to source your environment setup file.
+{% highlight sh %}
+source /opt/ros/indigo/setup.bash
+{% endhighlight %}
+
+4.2 Change the directory to catkin workspace.
+{% highlight sh %}
+cd ~/my_ws/
+{% endhighlight %}
+
+4.3 Use catkin_make.
+{% highlight sh %}
 catkin_make
 {% endhighlight %}
 
-## Launch Script
+## Launching Gazebo Concert
 
-1\. Check the path to the gazebo_concert.
+1\. Source setup file.
 {% highlight sh %}
-rospack find gazebo_concert
-# Output: /opt/ros/indigo/share/gazebo_concert
-{% endhighlight %}
-
-2\. Change the path.
-{% highlight sh %}
-source /home/<your_name>/helloworld/turtlebot/my_gazebo_concert/devel/setup.bash
+source ~/my_ws/devel/setup.bash
 {% endhighlight %}
 
 ***NOTE:*** *The command changes the path only in this terminal.*
 
-3\. Check the path to the gazebo_concert.
-{% highlight sh %}
-rospack find gazebo_concert
-# Output:/home/<your_name>/helloworld/turtlebot/my_gazebo_concert/src
-{% endhighlight %}
-
-4\. Launch gazebo_concert.
+2\. Launch gazebo_concert.
 {% highlight sh %}
 roslaunch gazebo_concert concert.launch
 {% endhighlight %}
 
-5\. Start rocon_remocon.
+3\. Start rocon_remocon.
 {% highlight sh %}
 rocon_remocon
 {% endhighlight %}
 
 You will see this image:
 
-{% include image.html img="/assets/sim_remocon.png" title="Remocon" %}
+{% include image.html img="/assets/sim_remocon_empty_list.png" title="Remocon" %}
+
+4\. Press `Add`. Edit `MASTER_URI`.
+{% highlight sh %}
+MASTER_URI: http://localhost:11311
+{% endhighlight %}
+
+{% include image.html img="/assets/sim_remocon_add.png" title="Remocon Add Master" %}
+
+5\. Press `Add`. You will see ros master `Gazebo Concert`.
+
+{% include image.html img="/assets/sim_remocon.png" title="Remocon Master List" %}
 
 6\. Press `Refresh`.
 
@@ -103,6 +159,6 @@ You can watch these steps in the video:
 
 {% include youtube.html youtubeid="aHQym_LSisA" youtubetitle="Multiple TurtleBots in Concert"%}
 
-You can add new robots in simulation by editing
-`/home/<your_name>/helloworld/turtlebot/my_gazebo_concert/src/solutions/gazebo.parameters`
-file. Read more about rocon project on [wiki ros](http://wiki.ros.org/rocon).
+You can add new robots in simulation by editing `gazebo.parameters` file in
+`gazebo_concert` package. Read more about rocon project on
+[wiki ros](http://wiki.ros.org/rocon).
