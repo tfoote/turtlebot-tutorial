@@ -6,16 +6,14 @@ answerrostag: "challenge_photo_using_code"
 track: [challenge]
 ---
 
-[comment]: <> (TODO: replace answerrostag and track)
-
-We have learnt how to take a photo manually, but it is not very convenient.
+We have learned how to take a photo manually, but it is not very convenient.
 In this lesson we will learn how to take a photo using a script.
 
 {% include using_github_rep.md %}
 
-## Launch Script
+## Launching Script
 
-1\. Launch gazebo.
+1\. Launch Gazebo.
 {% highlight sh %}
 roslaunch turtlebot_gazebo turtlebot_world.launch
 {% endhighlight %}
@@ -30,14 +28,24 @@ cd ~/helloworld/turtlebot
 python take_photo.py
 {% endhighlight %}
 
+You will see this string in terminal:
+{% highlight sh %}
+[INFO] [WallTime: 1456885227.493792] [646.730000] Saved image photo.jpg
+{% endhighlight %}
+
 4\. See the results. Open the image file.
 {% highlight sh %}
 ristretto photo.jpg
 {% endhighlight %}
 
-***NOTE:*** *You can use image viewer which you prefer.*
+***NOTE:*** *You can use image viewer which you prefer. For instance, you can
+use eog which is GNOME image viewer.*
 
-5\. Interrupt gazebo. Close the terminals.
+{% highlight sh %}
+eog photo.jpg
+{% endhighlight %}
+
+5\. Interrupt Gazebo. Close the terminals.
 
 You can watch these steps in the video:
 
@@ -71,13 +79,15 @@ The title of the saved photo is `new_title.jpg`. This command sets the
 `/take_photo/image_title` parameter. Let’s check if the parameter set.
 {% highlight sh %}
 rosparam list | grep image_title
-# Output: /take_photo/image_title
+# Output:
+/take_photo/image_title
 {% endhighlight %}
 
 Now the program will use the title from parameter server. Check the current value.
 {% highlight sh %}
 rosparam get /take_photo/image_title
-# Output: new_title.jpg
+# Output:
+new_title.jpg
 {% endhighlight %}
 
 Launch the program without a parameter.
