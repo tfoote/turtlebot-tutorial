@@ -6,8 +6,6 @@ answerrostag: "challenge_video"
 track: [challenge]
 ---
 
-[comment]: <> (TODO: replace answerrostag and track)
-
 In this lesson we will learn how to record a video. TurtleBot has different
 image topics. We will work with `/camera/rgb/image_raw`.
 

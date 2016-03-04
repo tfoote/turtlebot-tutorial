@@ -6,8 +6,6 @@ answerrostag: "challenge_following_the_route"
 track: [challenge]
 ---
 
-[comment]: <> (TODO: replace answerrostag and track)
-
 We will combine our skills from two lessons:
 ["Going to a Specific Location on Your Map Using Code"]({{ site.url }}{% post_url 2015-02-03-11 %})
 and ["Taking a Photo Using Code"]({{ site.url }}{% post_url 2015-02-04-3 %}).

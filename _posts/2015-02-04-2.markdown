@@ -6,8 +6,6 @@ answerrostag: "challenge_taking_photo"
 track: [challenge]
 ---
 
-[comment]: <> (TODO: replace answerrostag and track)
-
 In this lesson we will learn how to take a photo. TurtleBot has different image
 topics. We will work with `/camera/rgb/image_raw`. We will use `image_view`
 package. It is a simple image viewer for ROS image topics.
