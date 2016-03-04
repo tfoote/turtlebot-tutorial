@@ -6,8 +6,6 @@ answerrostag: "challenge_rapp"
 track: [challenge]
 ---
 
-[comment]: <> (TODO: replace answerrostag and track)
-
 We want to show you how to write a rocon application (rapp). It is a bunch
 of instructions how to launch the application, something like a wrapper which
 has special structure and logic. You can find more information in
@@ -18,16 +16,14 @@ We will write a rapp for turtlebot_follower package.
 ## Prerequisites
 
 This lesson is a continuation of the previous lesson:
-["TurtleBot Follower"]({{ site.url }}{% post_url 2015-02-04-7 %}).
+["Multiple TurtleBots in Concert"]({{ site.url }}{% post_url 2015-02-04-6 %}).
 If you have not done that lesson, do it firstly.
 
 ## Creating follower Rapp
 
 1\. Create a package `my_rapps`.
 {% highlight sh %}
-cd ~/helloworld/turtlebot/
-mkdir -p my_rapps/src
-cd my_rapps/src
+cd ~/my_ws/src
 catkin_create_pkg my_rapps
 {% endhighlight %}
 
@@ -41,15 +37,15 @@ mkdir -p rapps/follower
 [github](https://github.com/turtlebot/turtlebot_apps/tree/indigo/turtlebot_rapps/rapps/follower).
 There are four files: `follower.interface`, `follower.launch`, `follower.rapp`,
 `follower_bubble_icon.png`. You can find more information about these files in
- [Create your First Rapp](http://wiki.ros.org/turtlebot/Tutorials/indigo/Create%20your%20First%20Rapp)
- lesson or on [rocon](http://wiki.ros.org/rocon) page.  
+[Create your First Rapp](http://wiki.ros.org/turtlebot/Tutorials/indigo/Create%20your%20First%20Rapp)
+lesson or on [rocon](http://wiki.ros.org/rocon) page.
 
 4\. Create an empty `follower.parameters` file.
 {% highlight sh %}
 touch follower.parameters
 {% endhighlight %}
 
-5\. Modify `follower.launch` file. Change default `simulation` value to `true` .
+5\. Modify `follower.launch` file. Change default `simulation` value to `true`.
 
 Old value:
 {% highlight sh %}
@@ -77,36 +73,26 @@ public_parameters: follower.parameters
 icon:              follower_bubble_icon.png
 {% endhighlight %}
 
-7\. Export the rapp in `my_rapps/package.xml` file by adding this string in `<export>` tag.
+7\. Export the rapp in `my_rapps/package.xml` file by adding this string
+in `<export>` tag.
 {% highlight sh %}
 <export>
   <rocon_app>rapps/follower/follower.rapp</rocon_app>
 </export>
 {% endhighlight %}
 
-8\. We want that `gazebo_concert` package to use `my_rapps` and
-`my_turtlebot_follower` packages. If we use `catkin_make` it will overlay only one package. Let's create chaining catkin workspaces.
+8\. Build package.
 {% highlight sh %}
-cd ~/helloworld/turtlebot/my_turtlebot_follower
-source devel/setup.bash
-cd ~/helloworld/turtlebot/my_rapps
+source /opt/ros/indigo/setup.bash
+cd ~/my_ws/
 catkin_make
 {% endhighlight %}
-
-You will see this string in the output.
-{% highlight sh %}
--- This workspace overlays:
- /home/<your_name>/helloworld/turtlebot/my_turtlebot_follower/devel;/opt/ros/indigo
-{% endhighlight %}
-
-You can find more
-information about overlaying on [wiki ros](http://wiki.ros.org/catkin/Tutorials/workspace_overlaying).  
 
 ## Testing
 
 1\. Change the path.
 {% highlight sh %}
-source ~/helloworld/turtlebot/my_rapps/devel/setup.bash
+source ~/my_ws/devel/setup.bash
 {% endhighlight %}
 
 2\. Show existing rapps.
@@ -131,11 +117,11 @@ You will see this output.
 
 {% include image.html img="/assets/sim_rocon_app_info.png" title="my_rapps Information" %}
 
-## Modifying my_gazebo_concert Package
+## Modifying gazebo_concert Package
 
 1\. Edit `gazebo.parameters` file.
 {% highlight sh %}
-cd ~/helloworld/turtlebot/my_gazebo_concert/src/solutions/
+cd ~/my_ws/src/rocon_tutorials/concert_tutorials/gazebo_concert/solutions
 {% endhighlight %}
 
 Modify `robot_rapp_whitelist` for each robot.
@@ -150,33 +136,21 @@ New value:
 robot_rapp_whitelist: [rocon_apps, turtlebot_rapps, my_rapps]
 {% endhighlight %}
 
-2\. Make `my_gazebo_concert`.
+2\. Build package.
 {% highlight sh %}
-cd ~/helloworld/turtlebot
-source my_rapps/devel/setup.bash
-cd my_gazebo_concert
-rm -r devel
-rm -r build
+source /opt/ros/indigo/setup.bash
+cd ~/my_ws/
 catkin_make
 {% endhighlight %}
-
-You will see this string in the output.
-{% highlight sh %}
--- This workspace overlays:
- /home/nadya/helloworld/turtlebot/my_rapps/devel;
- /home/nadya/helloworld/turtlebot/my_turtlebot_follower/devel;/opt/ros/indigo
-{% endhighlight %}
-
-{% include image.html img="/assets/sim_overlaying_packages.png" title="catkin_make" %}
 
 ## Running follower Rapp
 
 1\. Change the path.
 {% highlight sh %}
-source /home/<your_name>/helloworld/turtlebot/my_gazebo_concert/devel/setup.bash
+source ~/my_ws/devel/setup.bash
 {% endhighlight %}
 
-2\.  Launch gazebo_concert.
+2\. Launch gazebo_concert.
 {% highlight sh %}
 roslaunch gazebo_concert concert.launch
 {% endhighlight %}
@@ -204,7 +178,7 @@ You will see the familiar gazebo world.
 6\. In a new terminal start follower rapp.
 {% highlight sh %}
 rosservice call /gamza2/start_rapp my_rapps/follower [] []
-#Output:
+# Output:
 started: True
 error_code: 0
 message: Success
@@ -229,7 +203,7 @@ You will see in `gamza2` terminal:
 10\. Stop rapp.
 {% highlight sh %}
 rosservice call /gamza2/stop_rapp
-#Output:
+# Output:
 stopped: True
 error_code: 0
 message: Success
@@ -239,6 +213,6 @@ message: Success
 
 You can watch these steps in the video:
 
-{% include youtube.html youtubeid="-ZKtM1303Nw" youtubetitle="Writing Your First Rapp"%}
+{% include youtube.html youtubeid="ckucl1SeyJM" youtubetitle="Writing Your First Rapp"%}
 
 We have finished with robot side, go to the next lesson to write user side.
