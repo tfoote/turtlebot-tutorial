@@ -6,23 +6,22 @@ answerrostag: "challenge_rocon_interaction"
 track: [challenge]
 ---
 
-[comment]: <> (TODO: replace answerrostag and track)
-
 In this lesson we will write user side of rocon application. We will learn how
 to add follower application in application list.
 
 ## Prerequisites
 
 This lesson is a continuation of the previous lesson:
-["Writing Your First Rapp"]({{ site.url }}{% post_url 2015-02-04-8 %}).
+["Multiple TurtleBots in Concert"]({{ site.url }}{% post_url 2015-02-04-6 %}).
 If you have not done this lesson, do it firstly.
 
 ## Creating interaction
 
 1\. Create interactions folder in `my_rapps`.
 {% highlight sh %}
-cd ~/helloworld/turtlebot/my_rapps/src/my_rapps/
+cd ~/my_ws/src/my_rapps/
 mkdir interactions
+cd ineractions
 {% endhighlight %}
 
 2\. Create `my.interactions` file with following content:
@@ -40,31 +39,38 @@ mkdir interactions
     remappings: []
 {% endhighlight %}
 
-## Creating my_concert_service_gazebo package
+## Modifying concert_service_gazebo Package
 
-1\. Create package `my_concert_service_gazebo`.
+1\. Clone `concert_services`.
 {% highlight sh %}
-cd ~/helloworld/turtlebot/
-mkdir -p my_concert_service_gazebo/src/my_concert_service_gazebo
-cd my_concert_service_gazebo/src/my_concert_service_gazebo
+cd ~/my_ws/src/
+git clone https://github.com/robotics-in-concert/concert_services.git
 {% endhighlight %}
 
-2\. Copy `concert_service_gazebo` folder from
-[github](https://github.com/robotics-in-concert/concert_services/tree/indigo)
-(branch `indigo`).
+2\. Change directory.
+{% highlight sh %}
+cd ~/my_ws/src/concert_services/
+{% endhighlight %}
+
+3\. Change git branch.
+{% highlight sh %}
+git checkout indigo
+{% endhighlight %}
 
 3\. Edit `robot.launch` file.
 {% highlight sh %}
-cd ~/helloworld/turtlebot/my_concert_service_gazebo/src/my_concert_service_gazebo/launch/
+cd concert_service_gazebo/launch/
 {% endhighlight %}
 
-Add  `robot_interactions` and `robot_interactions_list` arguments below `robot_concert_whitelist`.
+Add `robot_interactions` and `robot_interactions_list` arguments
+below `robot_concert_whitelist` and above `include` tag.
 {% highlight sh %}
 <arg name="robot_interactions" default="false"/>
 <arg name="robot_interactions_list" default="[]"/>
 {% endhighlight %}
 
-Add `interactions` and `interactions_list` arguments below `concert_whitelist`.
+Add `interactions` and `interactions_list` arguments below
+`concert_whitelist` and inside `include` tag.
 {% highlight sh %}
 <arg name="interactions" value="$(arg robot_interactions)"/>
 <arg name="interactions_list" value="$(arg robot_interactions_list)"/>
@@ -72,7 +78,7 @@ Add `interactions` and `interactions_list` arguments below `concert_whitelist`.
 
 4\. Edit `gazebo_robot_manager.py` file.
 {% highlight sh %}
-cd ~/helloworld/turtlebot/my_concert_service_gazebo/src/my_concert_service_gazebo/src/concert_service_gazebo
+cd ~/my_ws/src/concert_services/concert_service_gazebo/src/concert_service_gazebo/
 {% endhighlight %}
 
 Add two strings in `_prepare_rocon_launch_text` function
@@ -86,20 +92,14 @@ above this string
 launch_text += '  </launch>'
 {% endhighlight %}
 
-5\. We want  `gazebo_concert` package to use `my_rapps`,
-`my_turtlebot_follower` packages and also `my_concert_service_gazebo` package
-{% highlight sh %}
-cd ~/helloworld/turtlebot/my_rapps
-source devel/setup.bash
-cd ~/helloworld/turtlebot/my_concert_service_gazebo
-catkin_make
-{% endhighlight %}
+We edit this file for using `robot_interactions` and `robot_interactions_list`
+parameters.
 
-## Modifying my_gazebo_concert Package
+## Modifying gazebo_concert Package
 
 1\. Edit `gazebo.parameters` file.
 {% highlight sh %}
-cd ~/helloworld/turtlebot/my_gazebo_concert/src/solutions
+cd ~/my_ws/src/rocon_tutorials/concert_tutorials/gazebo_concert/solutions/
 {% endhighlight %}
 
 Add `interactions` and `interactions_list` for each robot.
@@ -108,32 +108,21 @@ interactions: true
 interactions_list: [turtlebot_bringup/documentation.interactions, my_rapps/my.interactions]
 {% endhighlight %}
 
-2\. Make `my_gazebo_concert`.
+2\. Build package.
 {% highlight sh %}
-cd ~/helloworld/turtlebot
-source my_concert_service_gazebo/devel/setup.bash
-cd my_gazebo_concert
-rm -r devel
-rm -r build
+source /opt/ros/indigo/setup.bash
+cd ~/my_ws/
 catkin_make
 {% endhighlight %}
 
-You will see this string in the output.
-{% highlight sh %}
--- This workspace overlays:
-/home/nadya/helloworld/turtlebot/my_concert_service_gazebo/devel;
-/home/nadya/helloworld/turtlebot/my_rapps/devel;
-/home/nadya/helloworld/turtlebot/my_turtlebot_follower/devel;/opt/ros/indigo
-{% endhighlight %}
-
-## Running follower application
+## Running Follower Application
 
 1\. Change the path.
 {% highlight sh %}
-source ~/helloworld/turtlebot/my_gazebo_concert/devel/setup.bash
+source ~/my_ws/devel/setup.bash
 {% endhighlight %}
 
-2\.  Launch gazebo_concert.
+2\. Launch gazebo_concert.
 {% highlight sh %}
 roslaunch gazebo_concert concert.launch
 {% endhighlight %}
@@ -150,7 +139,7 @@ rocon_remocon
 
 4\. Select `Gazebo Concert`->`User`->`Gazebo Viewer`.
 
-You will see the familiar gazebo world.
+You will see the familiar Gazebo world.
 
 5\. Select `Concert Teleop` in `Interactions Chooser`.
 
@@ -161,9 +150,9 @@ You will see the familiar gazebo world.
 rocon_remocon
 {% endhighlight %}
 
-8\. Press `Add`. Edit `Master_Uri`.
+8\. Press `Add`. Edit `MASTER_URI`.
 {% highlight sh %}
-Master_Uri = http://localhost:11412
+MASTER_URI = http://localhost:11412
 {% endhighlight %}
 
 {% include image.html img="/assets/sim_remocon_add_master.png" title="Remocon Add Master" %}
@@ -188,4 +177,4 @@ Master_Uri = http://localhost:11412
 
 You can watch these steps in the video:
 
-{% include youtube.html youtubeid="RenoofWVzTA" youtubetitle="Writing Your First Interaction"%}
+{% include youtube.html youtubeid="z4-s81vw608" youtubetitle="Writing Your First Interaction"%}
